@@ -11,6 +11,7 @@ using System.IO;
 
 namespace CardScoring.Processing
 {
+    //TODO MAKE THIS WORK
     public class CircleProcessor
     {
         public CircleProcessor()

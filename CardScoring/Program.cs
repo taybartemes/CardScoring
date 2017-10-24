@@ -43,6 +43,7 @@ namespace CardScoring
 
         private static void HandleArgs(string[] args)
         {
+            //TODO parse args
             Logger.LogInfo("Parsing CommandLine Args");
             commandLineArgs = new CommandLineArgs();
             if (!args.Any())
