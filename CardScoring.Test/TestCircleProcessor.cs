@@ -11,7 +11,7 @@ namespace CardScoring.Test
         {
             var imgProcessor = new CardScoring.Processing.CircleProcessor();
             var circles = imgProcessor.FindCircles(TestImg.test_card_1);
-            Assert.IsNotNull(circles);
+            Assert.AreEqual(circles.Size, 2);
         }
 
         [TestMethod]
@@ -19,7 +19,7 @@ namespace CardScoring.Test
         {
             var imgProcessor = new CardScoring.Processing.CircleProcessor();
             var circles = imgProcessor.FindCircles(TestImg.test_card_2);
-            Assert.IsNotNull(circles);
+            Assert.AreEqual(circles.Size, 2);
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace CardScoring.Test
         {
             var imgProcessor = new CardScoring.Processing.CircleProcessor();
             var circles = imgProcessor.FindCircles(TestImg.test_card_3);
-            Assert.IsNotNull(circles);
+            Assert.AreEqual(circles.Size, 2);
         }
 
 

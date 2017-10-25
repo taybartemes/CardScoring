@@ -46,17 +46,42 @@ namespace CardScoring
             //TODO parse args
             Logger.LogInfo("Parsing CommandLine Args");
             commandLineArgs = new CommandLineArgs();
-            if (!args.Any())
-            {
+            try {
+                if (!args.Any())
+                {
+                }
+                else if (args.Any(x => x.StartsWith("-h")))
+                {
+                    Logger.LogInfo(HelpText);
+                }
+                if (args.Any(x => x.StartsWith("-f")))
+                {
+                    var files = args.FirstOrDefault(x => x.Contains("-f"))?.Split('=', ',');
+                    files = files.Where(x => x != "-f" && x != "=").ToArray();
+                    commandLineArgs.FilesToProcess = files;
+                }
+                if (args.Any(x => x.StartsWith("-w")))
+                {
+                    var wDir = args.FirstOrDefault(x => x.Contains("-w"))?.Split('=');
+                    var dir = wDir.FirstOrDefault(x => x != "-w" && x != "=");
+                    commandLineArgs.WorkingDir = dir;
+                }
+                if (args.Any(x => x.StartsWith("-o")))
+                {
+                    var oDir = args.FirstOrDefault(x => x.Contains("-o"))?.Split('=');
+                    var dir = oDir.FirstOrDefault(x => x != "-o" && x != "=");
+                    commandLineArgs.OutputLocation = dir;
+                }
+
             }
-            else if (args.First().Contains("help"))
+            catch (Exception ex)
             {
-                Logger.LogInfo(HelpText);
+                Logger.LogError("Got an invalid Command Line argument", ex);
             }
         }
         static string HelpText = @"
 The syntax of this command is:
     CardScoring 
-        [FileNames | Help | WorkingDir]";
+        [-f FileName| -h Help | -w WorkingDir | -o OutputFile]";
     }
 }

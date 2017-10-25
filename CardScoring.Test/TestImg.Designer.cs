@@ -63,6 +63,26 @@ namespace CardScoring.Test {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap found {
+            get {
+                object obj = ResourceManager.GetObject("found", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap numbers {
+            get {
+                object obj = ResourceManager.GetObject("numbers", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap test_card_1 {
             get {
                 object obj = ResourceManager.GetObject("test_card_1", resourceCulture);
@@ -86,6 +106,16 @@ namespace CardScoring.Test {
         internal static System.Drawing.Bitmap test_card_3 {
             get {
                 object obj = ResourceManager.GetObject("test_card_3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tmp9 {
+            get {
+                object obj = ResourceManager.GetObject("tmp9", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

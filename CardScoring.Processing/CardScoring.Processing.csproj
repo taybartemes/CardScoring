@@ -82,6 +82,7 @@
   <ItemGroup>
     <Compile Include="BarcodeReader.cs" />
     <Compile Include="CircleProcessor.cs" />
+    <Compile Include="NumberFinder.cs" />
     <Compile Include="OCR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -12,11 +12,19 @@ namespace CardScoring
     {
         public static void WriteCsv<T>(string path, IEnumerable<T> objectsToWrite)
         {
-            using(TextWriter writer = File.CreateText(path))
+            try
             {
-                var csv = new CsvWriter(writer);
-                csv.Configuration.HasHeaderRecord = false;
-                csv.WriteRecords(objectsToWrite);
+                using (TextWriter writer = File.CreateText(path))
+                {
+                    var csv = new CsvWriter(writer);
+                    csv.Configuration.HasHeaderRecord = true;
+                    //csv.WriteHeader(typeof(T));
+                    csv.WriteRecords(objectsToWrite);
+                }
+            }
+            catch(Exception ex)
+            {
+                Logging.Logger.LogError(ex);
             }
         }
     }

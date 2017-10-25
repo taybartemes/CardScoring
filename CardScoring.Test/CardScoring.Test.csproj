@@ -97,6 +97,7 @@
     <Compile Include="TestCircleProcessor.cs" />
     <Compile Include="TestBarcodeReader.cs" />
     <Compile Include="TestOCR.cs" />
+    <Compile Include="TestNumberFinder.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TestImg.resx">
@@ -115,6 +116,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="TestCards\numbers.png" />
+    <Content Include="TestCards\found.png" />
     <Content Include="TestCards\test_card_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -124,6 +127,7 @@
     <Content Include="TestCards\test_card_3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestCards\tmp9.bmp" />
     <Content Include="x64\liblept172.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -20,6 +20,7 @@ namespace CardScoring.Processing
         {
             if (File.Exists(path))
             {
+                if (!path.EndsWith(".png")) return "";
                 var barcodeBitMap = (Bitmap)Image.FromFile(path);
                 var result = Decode(barcodeBitMap);
                 if(result != null)
